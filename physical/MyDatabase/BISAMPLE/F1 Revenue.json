@@ -1,0 +1,44 @@
+{
+  "physicalTable" : {
+    "name" : "F1 Revenue",
+    "sourceTable" : "physicalTable:MyDatabase.BISAMPLE.SAMP_REVENUE_F",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:MyDatabase.BISAMPLE.D1 Time",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.F1 Revenue.BILL_DAY_DT",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.D1 Time.CALENDAR_DATE"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.BISAMPLE.D2 Products",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.F1 Revenue.PROD_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.D2 Products.PROD_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.BISAMPLE.D3 Customers",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.F1 Revenue.CUST_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.D3 Customers.CUST_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    }, {
+      "rightTable" : "physicalTable:MyDatabase.BISAMPLE.D4 Addresses",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.F1 Revenue.SHIPTO_ADDR_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.D4 Addresses.ADDRESS_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

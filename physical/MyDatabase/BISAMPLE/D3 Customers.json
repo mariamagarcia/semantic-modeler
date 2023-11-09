@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "D3 Customers",
+    "sourceTable" : "physicalTable:MyDatabase.BISAMPLE.SAMP_CUSTOMERS_D",
+    "overrideSourceCacheSetting" : false
+  }
+}
